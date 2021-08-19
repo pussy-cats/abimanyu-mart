@@ -13,20 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::get('/', 'WelcomeController@index')->name('home');
+
+Route::middleware('auth')->namespace('Dashboard')->name('dashboard')->prefix('dashboard')->group(function(){
+    // Dashboard index
+    Route::get('/', 'HomeController@index');
+
+    Route::name('.product.')->prefix('product')->group(function(){
+        Route::get('/', 'ProductController@index')->name('index');
+        Route::get('/add', 'ProductController@addProduct')->name('add');
+        Route::post('/create', 'ProductController@createProduct')->name('create');
+    });
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('auth');
