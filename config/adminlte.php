@@ -16,7 +16,7 @@ return [
 
     'title' => 'AdminLTE 3',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => ' - Abimanyu Mart',
 
     /*
     |--------------------------------------------------------------------------
@@ -237,6 +237,17 @@ return [
             'url' => '/dashboard',
             'icon' => 'fas fa-fw fa-chart-bar'
         ],
+        ['header' => 'MENU USER'],
+        [
+            'text' => 'Daftar Admin',
+            'url' => '/dashboard/admin',
+            'icon' => 'fas fa-fw fa-chart-bar'
+        ],
+        [
+            'text' => 'Daftar User',
+            'url' => '/dashboard/user',
+            'icon' => 'fas fa-fw fa-chart-bar'
+        ],
         ['header' => 'MENU PRODUK'],
         [
             'text' => 'Daftar Produk',
@@ -248,21 +259,11 @@ return [
             'url'  => '/dashboard/product/add',
             'icon' => 'fas fa-fw fa-plus',
         ],
-        ['header' => 'labels'],
+        ['header' => 'MENU PENJUALAN'],
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Daftar Penjualan',
+            'url'  => '/dashboard/checkout',
+            'icon' => 'fas fa-fw fa-list',
         ],
     ],
 
